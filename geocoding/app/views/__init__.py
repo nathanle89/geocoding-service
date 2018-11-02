@@ -1,1 +1,1 @@
-from .location import *
+from .geo_location import *
