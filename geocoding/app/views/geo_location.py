@@ -1,6 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from geocoding.app.services.geocoder_service import GeoCoderService
+from app.services.geocoder_service import GeoCoderService
 
 @api_view(["GET"])
 def get_location(request):

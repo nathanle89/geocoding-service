@@ -1,3 +1,27 @@
 .idea/
 *.iml
+__pycache__/
+*.pyc
+*.pyo
+
 geocoding/.env
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+bin/
+include/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
