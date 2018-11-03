@@ -1,6 +1,6 @@
 import geocoder
 from django.conf import settings
-from app.views.helpers.custom_exceptions import ValidationError, ServiceUnavailable
+from app.views.helpers.custom_exceptions import ServiceUnavailable
 from urllib3.exceptions import HTTPError, ConnectionError
 
 class GeoCoderService:
