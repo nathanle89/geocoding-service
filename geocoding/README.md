@@ -16,6 +16,8 @@ Our Network Service will use HERE as the primary service and it will fall back t
 - Django = 2.1.3 
 - djangorestframework = 3.8.2
 - django-environ = 0.4.5
+- urllib3 = 1.24.1
+- requests = 2.20.0
 
 ## Setup steps:
 
