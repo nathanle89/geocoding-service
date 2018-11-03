@@ -1,3 +1,4 @@
 # This module contains all views for the application
 
-from .geo_location import *
+from geocoding.app.views.api.web.v1.geo_location import *
+from .root import *

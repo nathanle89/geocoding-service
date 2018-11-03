@@ -138,5 +138,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = str(APP_DIR('media'))
 
 REST_FRAMEWORK = {
-
+    'EXCEPTION_HANDLER': 'geocoding.app.views.helpers.custom_exception_handler'
 }
