@@ -7,16 +7,12 @@ from app.views.helpers.custom_exceptions import *
 def get_location(request):
     latitude, longitude = parse_params(request)
     data = GeoCoderService.lookup(latitude, longitude)
+    if data:
+        output = data
+    else:
+        output = { "message": "No result found" }
 
-    return Response({
-        "neighborhood": data['neighborhood'],
-        "district": data['district'],
-        "city": data['city'],
-        "county": data['county'],
-        "postal": data['postal'],
-        "state": data['state'],
-        "country": data['country']
-    })
+    return Response(output)
 
 def parse_params(request):
     params = request.query_params
