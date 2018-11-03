@@ -18,6 +18,10 @@ def parse_params(request):
     params = request.query_params
     if 'latitude' not in params and 'longitude' not in params:
         raise ParseError("Missing Latitude and Longitude")
+    elif 'latitude' not in params:
+        raise ParseError("Missing Latitude")
+    elif 'longitude' not in params:
+        raise ParseError("Missing Longitude")
 
     try:
         latitude = float(params['latitude'])

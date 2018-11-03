@@ -12,6 +12,16 @@ class AccountTests(APISimpleTestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(response.data['detail'], "Missing Latitude and Longitude")
 
+    def test_missing_lat(self):
+        response = self.client.get('/api/v1/location?longitude=1', format='json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(response.data['detail'], "Missing Latitude")
+
+    def test_missing_long(self):
+        response = self.client.get('/api/v1/location?latitude=1', format='json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(response.data['detail'], "Missing Longitude")
+
     def test_invalid_lat_long(self):
         response = self.client.get('/api/v1/location?latitude=bad&longitude=bad', format='json')
         self.assertEqual(response.status_code, status.HTTP_422_UNPROCESSABLE_ENTITY)
