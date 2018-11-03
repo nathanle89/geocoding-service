@@ -1,11 +1,10 @@
-import geocoder
 from django.conf import settings
 from app.views.helpers.custom_exceptions import ServiceUnavailable
 from urllib3.exceptions import HTTPError, ConnectionError
 from .here_client import HereReverseClient
 from .bing_client import BingReverseClient
 
-class GeoCoderService:
+class GeocoderService:
 
     @classmethod
     def lookup(cls, latitude, longitude):

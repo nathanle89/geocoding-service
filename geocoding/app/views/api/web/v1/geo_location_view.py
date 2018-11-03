@@ -1,12 +1,12 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from app.services.geocoder_service import GeoCoderService
+from app.services.geocoder_service import GeocoderService
 from app.views.helpers.custom_exceptions import *
 
 @api_view(["GET"])
 def get_location(request):
     latitude, longitude = parse_params(request)
-    data = GeoCoderService.lookup(latitude, longitude)
+    data = GeocoderService.lookup(latitude, longitude)
     if data:
         output = data
     else:
