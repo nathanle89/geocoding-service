@@ -122,3 +122,22 @@ System check identified no issues (0 silenced).
 Ran 7 tests in 1.804s
 ```
 
+### Understanding The Project Structures:
+
+Python follow the MVT (Model - View - Template) architecture which is very similar to MVC (Model - View - Controller)
+
+- ```geocoding``` directory is the root of our application:
+- ```config``` directory is a "project" in Django framework and ``app`` directory is the application 
+- ```config``` has all environment configuration settings we have for the service
+- ```config/settings``` directory contains settings for development, production and test environment. For now, we only populate development.py
+- ```app``` is the core of our service:
+  - ```app/services``` contains all services that encapsulate business logic and are invoked in Views  
+  - ```app/models``` contains all application models (ORM objects). For now, we don't have any models
+  - ```app/migrations``` contains all migrations for Database which we don't use for now
+  - ```app/views``` contains all views that define our REST API. 
+  - ```app/templates``` contains rendering templates for all endpoints. For now, we don't have any template.
+  - ```app/tests``` contains all test cases for services, models, and views
+  - ```urls.py``` defines all routes that are available in our application.
+- ```requirements``` contains libraries that each environment needs to run the application
+- ```manage.py``` is the interface file that help us interact with Django framework.
+
