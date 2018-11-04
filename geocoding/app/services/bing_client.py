@@ -8,7 +8,7 @@ class BingResult(object):
 
     def __init__(self, json_content):
         self.json = {}
-        if json_content['resourceSets'][0]['estimatedTotal'] > 0:
+        if len(json_content['resourceSets']) > 0 and json_content['resourceSets'][0]['estimatedTotal'] > 0:
             self._address = json_content['resourceSets'][0]['resources'][0].get('address', {})
 
             for key in BingResult.fields_to_process:

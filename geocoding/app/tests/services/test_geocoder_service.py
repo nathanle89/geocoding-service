@@ -14,7 +14,12 @@ class GeocoderServiceTestClass(SimpleTestCase):
         self.assertEqual(result['country'], 'USA')
         self.assertEqual(result['postal'], '94086')
 
-    def test_lookup_invalid_result(self):
+    def test_lookup_invalid_results(self):
         result = GeocoderService.lookup(1, 1)
+        self.assertEqual(result, {})
 
+        result = GeocoderService.lookup(0, 0)
+        self.assertEqual(result, {})
+
+        GeocoderService.lookup(180.4895567, -122.228409)
         self.assertEqual(result, {})

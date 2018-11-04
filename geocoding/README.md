@@ -98,11 +98,11 @@ Quit the server with CONTROL-C.
 
 - From web browser and use the follow URL: 
 
-```http://http://localhost:8000/api/v1/location?latitude={your_latitude}&longitude={your_longitude}```
+```http://localhost:8000/api/v1/location?latitude={your_latitude}&longitude={your_longitude}```
 
 - Using curl command:
 
-```curl "http://http://localhost:8000/api/v1/location?latitude={your_latitude}&longitude={your_longitude}""```
+```curl "http://localhost:8000/api/v1/location?latitude={your_latitude}&longitude={your_longitude}""```
 
 - To read information about the app, simply hit the base URL:
 

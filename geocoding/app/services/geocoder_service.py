@@ -16,6 +16,8 @@ class GeocoderService:
             if response.status == 'ERROR - No results found':
                 # Try with Bing to see if it works
                 response = bing_client.reverse_lookup(latitude, longitude)
+        except IndexError:
+            return {}
 
         except (HTTPError, ConnectionError):
             try:
